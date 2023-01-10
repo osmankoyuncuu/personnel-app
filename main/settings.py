@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #third party
     'rest_framework',
+    'drf_yasg',
+
     #my app
     'personnel',
 ]
