@@ -26,7 +26,8 @@ class Personnel(models.Model):
     salary = models.IntegerField(blank=True, null=True)
     start_date = models.DateTimeField(auto_now_add=True)
     create_user = models.DateTimeField(auto_now_add=True)
-    department = models.ForeignKey(Department, on_delete=models.PROTECT)
+    department = models.ForeignKey(Department, on_delete=models.PROTECT, related_name="personals")
     
     def __str__(self):
         return f"{self.first_name} {self.last_name} - {self.department}"
+        
