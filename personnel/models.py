@@ -23,7 +23,7 @@ class Personnel(models.Model):
     is_staffed = models.BooleanField(default=False)
     title = models.SmallIntegerField(choices=TITLE, default=3)
     gender = models.SmallIntegerField(choices=GENDER, default=4)
-    salary = models.IntegerField(blank=True, null=True)
+    salary = models.IntegerField(default=0)
     start_date = models.DateTimeField(auto_now_add=True)
     create_user = models.DateTimeField(auto_now_add=True)
     department = models.ForeignKey(Department, on_delete=models.PROTECT, related_name="personals")
