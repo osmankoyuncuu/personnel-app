@@ -14,5 +14,4 @@ router.register("personnel", PersonnelView )
 urlpatterns = [
     path('', DepartmentView.as_view()),
     path('', include(router.urls)),
-    #path('department/<str:department>/', DepartmentPersonalView.as_view())
 ]

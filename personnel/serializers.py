@@ -2,9 +2,11 @@ from rest_framework import serializers
 from .models import Department, Personnel
 
 class PersonnelSerializer(serializers.ModelSerializer):
+    department = serializers.StringRelatedField()
+    department_id = serializers.IntegerField(write_only=True)
     class Meta:
         model = Personnel
-        fields = "__all__"
+        fields = ("id","create_user", "first_name", "last_name", "is_staffed", "title", "gender", "salary", "start_date", "department", "department_id")
 
 class DepartmentSerializer(serializers.ModelSerializer):
     personal_count = serializers.SerializerMethodField()
