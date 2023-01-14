@@ -13,6 +13,7 @@ class DepartmentPersonalView(viewsets.ModelViewSet):
     queryset = Department.objects.all()
     serializer_class = DepartmentPersonalSerializer
     permission_classes = (IsStaffOrReadOnly,)
+    lookup_field = "name"
     
 class PersonnelView(viewsets.ModelViewSet):
     queryset = Personnel.objects.all()
